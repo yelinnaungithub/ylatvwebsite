@@ -1,345 +1,500 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="my" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YLA TV - Premium Entertainment</title>
+    <title>YLA TV - Premium Streaming App for Android, iOS & TV</title>
     
-    <meta name="description" content="Watch Live TV, Movies and Series on YLA TV.">
-    <link rel="icon" href="images/logo.png">
+    <meta name="description" content="YLA TV - အကောင်းဆုံး မြန်မာစာတန်းထိုး ဇာတ်ကားများ၊ ဇာတ်လမ်းတွဲများနှင့် ဘောလုံးပွဲများကို ကြည့်ရှုနိုင်မယ့် Premium Streaming Application။ Android, iOS နှင့် TV Box များအတွက်ရယူနိုင်ပါသည်။">
+    <meta name="keywords" content="StreamingApp, Football Live, TV, YLA TV, Myanmar TV, Live Sports, Movies, apk download, ios download">
+    <meta name="author" content="YLA TV Team">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ylatv.com/">
+    <meta property="og:title" content="YLA TV - Watch Movies, Series & Footballs Live">
+    <meta property="og:description" content="YLA TV ဆော့ဝဲလ်ကို ဒေါင်းလုတ်ရယူပြီး မြန်မာစာတန်းထိုး ဇာတ်ကားများ၊ ဇာတ်လမ်းတွဲများနှင့် ဘောလုံးပွဲများကို ကြည့်ရှုလိုက်ပါ။">
+    <meta property="og:image" content="assets/og-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ylatv.com/">
+    <meta property="twitter:title" content="YLA TV - Premium Streaming App">
+    <meta property="twitter:description" content="Watch Live Football & Premium TV Channels on Android, iOS & TV.">
+    <meta property="twitter:image" content="assets/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- 1. Global Styles --- */
-        :root {
-            --primary: #E50914; /* Netflix Red */
-            --dark: #141414;
-            --light: #ffffff;
-            --gray: #b3b3b3;
-            --glass: rgba(20, 20, 20, 0.85);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Padauk', sans-serif; scroll-behavior: smooth; }
-        
-        body {
-            background-color: var(--dark);
-            color: var(--light);
-            overflow-x: hidden;
-        }
-
-        /* --- 2. Navigation Bar (Header) --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-img { width: 40px; height: 40px; border-radius: 8px; }
-
-        .nav-btn {
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-        .nav-btn:hover { background: #ff0f1f; }
-
-        /* --- 3. Hero Section (Main Banner) --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 5% 50px;
-            background: radial-gradient(circle at center, #2a2a2a 0%, #141414 100%);
-            position: relative;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            width: 100%;
-            gap: 50px;
-        }
-
-        /* Left Side Text */
-        .text-box {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        h1 span { color: var(--primary); }
-
-        p.tagline {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        /* Download Buttons Area */
-        .cta-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .main-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #222;
-            border: 1px solid #333;
-            padding: 15px 25px;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-            max-width: 400px;
-        }
-
-        .main-btn:hover {
-            border-color: var(--primary);
-            background: #1f1f1f;
-            transform: translateX(10px);
-        }
-
-        .btn-label { font-size: 0.9rem; color: var(--gray); }
-        .btn-title { font-size: 1.1rem; font-weight: 700; color: white; }
-        .icon-box { font-size: 1.2rem; color: var(--primary); }
-
-        /* Right Side Phone Mockup */
-        .image-box {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-
-        .phone-mockup {
-            width: 280px;
-            height: 580px;
-            background: black;
-            border-radius: 40px;
-            border: 8px solid #333;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .slide-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0; left: 0;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        .slide-img.active { opacity: 1; }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* --- 4. Features Section --- */
-        .features {
-            padding: 80px 5%;
-            background: #0f0f0f;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 50px;
-            font-weight: 600;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .f-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: left;
-            transition: 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .f-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .f-icon {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .f-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
-        .f-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.5; }
-
-        /* --- 5. Footer --- */
-        footer {
-            padding: 40px 5%;
-            background: black;
-            border-top: 1px solid #333;
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        footer p { margin-top: 10px; }
-
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; text-align: center; }
-            .hero-content { flex-direction: column-reverse; text-align: center; }
-            .text-box { display: flex; flex-direction: column; align-items: center; }
-            .phone-mockup { width: 240px; height: 500px; }
-            .features { text-align: left; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo-text">
-            <img src="images/logo.png" alt="Logo" class="logo-img">
-            YLA TV
-        </div>
-        <a href="#download" class="nav-btn">Get App</a>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            
-            <div class="text-box">
-                <h1>Unlimited<br><span>Entertainment.</span></h1>
-                <p class="tagline">
-                    မြန်မာစာတန်းထိုး နိုင်ငံခြားရုပ်ရှင်များ၊ ဇာတ်လမ်းတွဲများနှင့် 
-                    Live TV Channel များကို တစ်နေရာတည်းမှာ အခမဲ့ ကြည့်ရှုလိုက်ပါ။
-                </p>
-
-                <div class="cta-group" id="download">
-                    <a href="LINK_1" class="main-btn">
-                        <div>
-                            <div class="btn-label">Direct Server 1</div>
-                            <div class="btn-title">Download APK</div>
-                        </div>
-                        <i class="fa-solid fa-cloud-arrow-down icon-box"></i>
-                    </a>
-
-                    <a href="LINK_2" class="main-btn">
-                        <div>
-                            <div class="btn-label">Direct Server 2</div>
-                            <div class="btn-title">Backup Link</div>
-                        </div>
-                        <i class="fa-solid fa-bolt icon-box"></i>
-                    </a>
-
-                    <a href="LINK_3" class="main-btn" style="border-color: #0088cc;">
-                        <div>
-                            <div class="btn-label">Community</div>
-                            <div class="btn-title">Join Telegram</div>
-                        </div>
-                        <i class="fa-brands fa-telegram icon-box" style="color: #0088cc;"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="image-box">
-                <div class="phone-mockup">
-                    <img src="images/screen1.jpg" class="slide-img active" alt="Screen 1">
-                    <img src="images/screen2.jpg" class="slide-img" alt="Screen 2">
-                    <img src="images/screen3.jpg" class="slide-img" alt="Screen 3">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="features">
-        <h2 class="section-title">Why YLA TV?</h2>
-        <div class="feature-grid">
-            <div class="f-card">
-                <i class="fa-solid fa-tv f-icon"></i>
-                <h3>Live Channels</h3>
-                <p>ရုပ်သံလိုင်းစုံကို အထစ်အငေါ့မရှိ ကြည်လင်ပြတ်သားစွာ ကြည့်ရှုနိုင်ပါသည်။</p>
-            </div>
-            <div class="f-card">
-                <i class="fa-solid fa-film f-icon"></i>
-                <h3>Latest Movies</h3>
-                <p>နောက်ဆုံးထွက် ရုပ်ရှင်များကို မြန်မာစာတန်းထိုးဖြင့် အမြန်ဆုံး တင်ဆက်ပေးနေပါသည်။</p>
-            </div>
-            <div class="f-card">
-                <i class="fa-solid fa-futbol f-icon"></i>
-                <h3>Live Sports</h3>
-                <p>ဘောလုံးပွဲစဉ်များကို ပွဲချိန်နှင့်တစ်ပြေးညီ အခမဲ့ ကြည့်ရှုအားပေးနိုင်ပါသည်။</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="logo-text" style="justify-content: center; margin-bottom: 20px;">YLA TV</div>
-        <p>&copy; 2025 YLA TV Inc. All rights reserved.</p>
-        <p>Contact: support@ylatv.com</p>
-    </footer>
 
     <script>
-        const slides = document.querySelectorAll('.slide-img');
-        let current = 0;
-        setInterval(() => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        }, 3000);
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                           dark: '#0f172a',
+                           primary: '#3b82f6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Padauk', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        }
+                    }
+                }
+            }
+        }
     </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Padauk:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Padauk', sans-serif;
+            background-color: #0f172a; /* Brand Dark */
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7); /* Slate-800 with opacity */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .glass-nav {
+             background: rgba(15, 23, 42, 0.8);
+             backdrop-filter: blur(16px);
+             border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
 
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .slider-dot {
+            transition: all 0.3s ease;
+        }
+        .slider-dot.active {
+            background-color: #3b82f6;
+            width: 32px;
+        }
+
+        /* --- Pure CSS Phone Mockup (NEW FEATURE) --- */
+        .mockup-phone {
+            border: 14px solid #1e293b; /* Frame Color */
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            background: #000;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: auto;
+        }
+        /* Dynamic Island / Notch */
+        .mockup-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 30px;
+            width: 120px;
+            background: #1e293b;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            z-index: 20;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <img class="h-10 w-10 rounded-xl shadow-lg transition-transform group-hover:scale-110" src="assets/logo.png" alt="YLA TV Logo" onerror="this.src='https://via.placeholder.com/50/3b82f6/ffffff?text=YLA'">
+                    <span class="font-bold text-2xl tracking-tight text-white">YLA <span class="text-blue-500">TV</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-1">
+                        <a href="#android" class="hover:text-blue-400 hover:bg-blue-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">Android</a>
+                        <a href="#ios" class="hover:text-blue-400 hover:bg-blue-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">iOS</a>
+                        <a href="#tv" class="hover:text-blue-400 hover:bg-blue-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">TV Box</a>
+                    </div>
+                </div>
+                <div class="md:hidden p-2 rounded-lg glass-card text-gray-300">
+                    <i class="fas fa-bars"></i>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="relative pt-36 pb-24 lg:pt-44 overflow-hidden">
+        <div class="absolute top-20 left-1/3 w-96 h-96 bg-blue-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div class="absolute top-40 right-1/4 w-96 h-96 bg-purple-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-sm text-blue-400 mb-6" data-aos="fade-down">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  </span>
+                Premium V 1.0 Available Now
+             </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight" data-aos="fade-up">
+                The Ultimate <br>
+                <span class="gradient-text">Streaming Experience</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                ဘောလုံးပွဲစဉ်များ၊ နိုင်ငံတကာ ရုပ်ရှင်များနှင့် TV Channel များကို Device မျိုးစုံတွင် အကန့်အသတ်မရှိ ကြည်လင်ပြတ်သားစွာ ကြည့်ရှုလိုက်ပါ။
+            </p>
+            
+            <div class="relative mx-auto max-w-5xl transform hover:scale-[1.02] transition-transform duration-500" data-aos="zoom-in-up" data-aos-delay="200">
+                <img src="assets/all-devices.png" alt="YLA TV on all devices" class="w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]" onerror="this.src='https://via.placeholder.com/1000x500/1e293b/ffffff?text=All+Devices+Premium+Mockup'">
+            </div>
+        </div>
+    </div>
+
+    <section id="android" class="py-24 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-green-600/10 rounded-full filter blur-[120px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div data-aos="fade-right" class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-3 rounded-2xl bg-green-500/20 text-green-500">
+                            <i class="fab fa-android text-3xl"></i>
+                        </span>
+                        <h2 class="text-4xl font-bold">Android Mobile</h2>
+                    </div>
+                    <p class="text-lg text-gray-300 mb-10 leading-relaxed">
+                        Android ဖုန်းအမျိုးအစားစုံအတွက် အထူး Optimize လုပ်ထားသော Version ဖြစ်ပါသည်။ မိမိနှင့် အဆင်ပြေမည့် Link မှ ဒေါင်းလုတ်ရယူပါ။
+                    </p>
+
+                    <div class="space-y-5">
+                        <a href="#" class="glass-card hover:border-blue-500/50 hover:bg-blue-600/10 group p-5 rounded-2xl flex items-center justify-between transition-all duration-300">
+                            <div class="flex items-center gap-5">
+                                <div class="bg-gradient-to-br from-blue-500 to-blue-700 p-4 rounded-xl shadow-lg shadow-blue-500/30">
+                                    <i class="fas fa-bolt text-xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition">Main Server</h3>
+                                    <span class="text-sm text-gray-400">Fastest Download • V 1.0.2</span>
+                                </div>
+                            </div>
+                            <span class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800/50 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                                <i class="fas fa-arrow-down"></i>
+                            </span>
+                        </a>
+
+                         <a href="#" class="glass-card hover:border-purple-500/50 hover:bg-purple-600/10 group p-5 rounded-2xl flex items-center justify-between transition-all duration-300">
+                            <div class="flex items-center gap-5">
+                                <div class="bg-gradient-to-br from-purple-500 to-purple-700 p-4 rounded-xl shadow-lg shadow-purple-500/30">
+                                    <i class="fab fa-google-drive text-xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition">Google Drive</h3>
+                                    <span class="text-sm text-gray-400">Alternative Link</span>
+                                </div>
+                            </div>
+                             <span class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800/50 group-hover:bg-purple-500 group-hover:text-white transition-all">
+                                <i class="fas fa-arrow-down"></i>
+                            </span>
+                        </a>
+
+                         <a href="#" class="glass-card hover:border-green-500/50 hover:bg-green-600/10 group p-5 rounded-2xl flex items-center justify-between transition-all duration-300">
+                            <div class="flex items-center gap-5">
+                                <div class="bg-gradient-to-br from-green-500 to-green-700 p-4 rounded-xl shadow-lg shadow-green-500/30">
+                                    <i class="fas fa-shield-alt text-xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-green-400 transition">Backup Server</h3>
+                                    <span class="text-sm text-gray-400">Secure Download</span>
+                                </div>
+                            </div>
+                             <span class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800/50 group-hover:bg-green-500 group-hover:text-white transition-all">
+                                <i class="fas fa-arrow-down"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center order-1 lg:order-2" data-aos="fade-left">
+                    
+                    <div class="mockup-phone w-[280px] h-[580px] md:w-[320px] md:h-[650px]">
+                        <div class="mockup-notch"></div>
+                        <div id="android-slider" class="w-full h-full relative bg-gray-900">
+                            <img src="assets/ss1.jpg" class="absolute w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100" alt="Home Screen" onerror="this.src='https://via.placeholder.com/320x650/111/fff?text=Home+Screen'">
+                            <img src="assets/ss2.jpg" class="absolute w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" alt="Live TV" onerror="this.src='https://via.placeholder.com/320x650/222/fff?text=Live+TV'">
+                            <img src="assets/ss3.jpg" class="absolute w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" alt="Sports Channels" onerror="this.src='https://via.placeholder.com/320x650/333/fff?text=Sports'">
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-10 z-30">
+                        <button onclick="changeSlide(0)" class="slider-dot w-3 h-3 rounded-full bg-gray-600 transition-all duration-300 active"></button>
+                        <button onclick="changeSlide(1)" class="slider-dot w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button>
+                        <button onclick="changeSlide(2)" class="slider-dot w-3 h-3 rounded-full bg-gray-600 transition-all duration-300"></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ios" class="py-24 relative overflow-hidden bg-gray-900/50">
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full filter blur-[120px] -z-10"></div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center backdrop-blur-md bg-black/60">
+            <div class="glass-card p-10 rounded-3xl text-center max-w-md mx-4 border-gray-700/50" data-aos="zoom-in">
+                 <div class="mb-6 relative inline-block">
+                     <div class="absolute inset-0 bg-gray-400 blur-xl opacity-30 rounded-full"></div>
+                     <i class="fab fa-apple text-7xl text-white relative"></i>
+                 </div>
+                <h3 class="text-3xl font-bold mb-4 gradient-text">iOS Version Coming Soon</h3>
+                <p class="text-gray-300 text-lg leading-relaxed">iPhone နှင့် iPad များအတွက် အကောင်းဆုံး အတွေ့အကြုံရရှိနိုင်ရန် ပြုပြင်မွမ်းမံနေဆဲဖြစ်ပါသည်။ မကြာမီ အသုံးပြုနိုင်တော့မည် ဖြစ်ပါသည်။</p>
+                <div class="mt-8">
+                    <span class="px-4 py-2 rounded-full bg-gray-800 text-sm text-gray-400 border border-gray-700">ETA: Next Month</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 filter blur-sm opacity-40 select-none pointer-events-none">
+            <div class="text-center mb-16">
+                 <div class="flex items-center justify-center gap-3 mb-4">
+                    <span class="p-3 rounded-2xl bg-gray-800 text-white">
+                        <i class="fab fa-apple text-3xl"></i>
+                    </span>
+                    <h2 class="text-4xl font-bold">iOS Installation Guide</h2>
+                </div>
+                <p class="text-xl text-gray-400 mt-4">Simple steps to get started on iPhone/iPad</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-3xl border-gray-800/50">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 overflow-hidden p-4">
+                        <img src="assets/ios-step1.jpg" alt="Step 1" class="w-full h-full object-cover rounded-xl shadow-lg" onerror="this.src='https://via.placeholder.com/400x600/222/fff?text=Step+1+Preview'">
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="flex-shrink-0 bg-blue-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-blue-500/30">1</span>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">Download Profile</h4>
+                            <p class="text-gray-400">Safari browser မှတဆင့် Configuration Profile ကို ဒေါင်းလုတ်လုပ်ပါ။</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="glass-card p-6 rounded-3xl border-gray-800/50">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 overflow-hidden p-4">
+                        <img src="assets/ios-step2.jpg" alt="Step 2" class="w-full h-full object-cover rounded-xl shadow-lg" onerror="this.src='https://via.placeholder.com/400x600/222/fff?text=Step+2+Preview'">
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="flex-shrink-0 bg-blue-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-blue-500/30">2</span>
+                        <div>
+                             <h4 class="font-bold text-xl mb-2">Trust Certificate</h4>
+                            <p class="text-gray-400">Settings > General > VPN & Device Management တွင် Trust လုပ်ပေးပါ။</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="glass-card p-6 rounded-3xl border-gray-800/50">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 overflow-hidden p-4">
+                        <img src="assets/ios-step3.jpg" alt="Step 3" class="w-full h-full object-cover rounded-xl shadow-lg" onerror="this.src='https://via.placeholder.com/400x600/222/fff?text=Step+3+Preview'">
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="flex-shrink-0 bg-blue-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-blue-500/30">3</span>
+                        <div>
+                             <h4 class="font-bold text-xl mb-2">Install & Enjoy</h4>
+                            <p class="text-gray-400">Home Screen တွင် ပေါ်လာသော App ကိုဖွင့်ပြီး ကြည့်ရှုနိုင်ပါပြီ။</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tv" class="py-24 relative overflow-hidden">
+        <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full filter blur-[150px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-block p-3 rounded-2xl bg-purple-500/20 text-purple-400 mb-4">
+                    <i class="fas fa-tv text-3xl"></i>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold">Android TV & Box Experience</h2>
+                <p class="text-xl text-gray-300 mt-6 max-w-3xl mx-auto leading-relaxed">
+                    တီဗီဖန်သားပြင်အကြီးပေါ်တွင် အလွယ်ကူဆုံးကြည့်ရှုနိုင်ရန် Downloader App အသုံးပြုနည်း လမ်းညွှန်
+                </p>
+            </div>
+
+            <div class="relative w-full max-w-4xl mx-auto mb-20" data-aos="zoom-in">
+                <img src="assets/my-tv-frame.png" alt="TV Frame" class="w-full rounded-lg shadow-2xl border border-gray-800" onerror="this.src='https://via.placeholder.com/1000x600/222/fff?text=Insert+Your+TV+Image+Here'">
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-12">
+                
+                <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-blue-500" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="flex-1">
+                            <span class="text-blue-500 font-bold text-lg mb-2 block">အဆင့် (၁)</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Downloader App ကို Install ပြုလုပ်ပါ</h3>
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                Google Play Store သို့ဝင်ရောက်ပြီး Downloader ဟုရိုက်ရှာပါ။ လိမ္မော်ရောင် Icon လေးနှင့် App ကို Install ပြုလုပ်ပေးပါ။
+                            </p>
+                        </div>
+                        <div class="w-full md:w-64 flex-shrink-0">
+                            <img src="assets/tv-step1.jpg" class="w-full rounded-lg shadow-lg border border-gray-700" alt="Step 1 Image" onerror="this.src='https://via.placeholder.com/300x200?text=Step+1+Image'">
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-purple-500" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="flex-1">
+                            <span class="text-purple-500 font-bold text-lg mb-2 block">အဆင့် (၂)</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Code ရိုက်ထည့်ပါ</h3>
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                Downloader ကိုဖွင့်ပြီး URL နေရာတွင် Code နံပါတ် <strong class="text-white">12345</strong> ကိုရိုက်ထည့်ကာ Go ကိုနှိပ်ပါ။
+                            </p>
+                        </div>
+                        <div class="w-full md:w-64 flex-shrink-0">
+                            <img src="assets/tv-step2.jpg" class="w-full rounded-lg shadow-lg border border-gray-700" alt="Step 2 Image" onerror="this.src='https://via.placeholder.com/300x200?text=Step+2+Image'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-green-500" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="flex-1">
+                            <span class="text-green-500 font-bold text-lg mb-2 block">အဆင့် (၃)</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Install & Open</h3>
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                Download ပြီးဆုံးပါက Install ကိုနှိပ်ပါ။ ပြီးလျှင် Open နှိပ်၍ TV Channel များကို ကြည့်ရှုနိုင်ပါပြီ။
+                            </p>
+                        </div>
+                        <div class="w-full md:w-64 flex-shrink-0">
+                            <img src="assets/tv-step3.jpg" class="w-full rounded-lg shadow-lg border border-gray-700" alt="Step 3 Image" onerror="this.src='https://via.placeholder.com/300x200?text=Step+3+Image'">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative bg-[#0a0f1d] pt-20 pb-10 overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] bg-blue-900/20 rounded-full filter blur-[100px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/logo.png" class="w-12 h-12 rounded-xl shadow-lg" onerror="this.style.display='none'">
+                        <span class="font-bold text-3xl">YLA TV</span>
+                    </div>
+                    <p class="text-gray-400 mb-8 max-w-md leading-relaxed">
+                        The best premium streaming platform for live sports, movies, and TV channels across all your devices.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all shadow-lg"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-blue-500 hover:text-white transition-all shadow-lg"><i class="fab fa-telegram-plane text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-red-500 hover:text-white transition-all shadow-lg"><i class="fas fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#android" class="text-gray-400 hover:text-blue-400 transition">Android App</a></li>
+                        <li><a href="#ios" class="text-gray-400 hover:text-blue-400 transition">iOS App</a></li>
+                        <li><a href="#tv" class="text-gray-400 hover:text-blue-400 transition">TV Box Version</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Support</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800/50 pt-10 flex flex-col md:flex-row items-center justify-between text-gray-500 text-sm">
+                <p>© 2025 YLA TV. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Made with <i class="fas fa-heart text-red-500 mx-1"></i> for Myanmar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations with customized settings
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 120,
+            easing: 'ease-out-cubic'
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'shadow-lg', 'h-16');
+                navbar.classList.remove('h-20', 'border-b-0');
+            } else {
+                navbar.classList.remove('glass-nav', 'shadow-lg', 'h-16');
+                navbar.classList.add('h-20', 'border-b-0');
+            }
+        });
+
+        // Android Screenshot Slider Logic (Smoother transition)
+        const slides = document.querySelectorAll('#android-slider img');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+                slide.style.zIndex = i === index ? '1' : '0';
+            });
+            dots.forEach((dot, i) => {
+                if(i === index) {
+                    dot.classList.add('active');
+                    dot.classList.remove('bg-gray-600');
+                } else {
+                    dot.classList.remove('active');
+                    dot.classList.add('bg-gray-600');
+                }
+            });
+            currentSlide = index;
+        }
+
+        function changeSlide(index) {
+            showSlide(index);
+            // Reset auto-slide timer when manually changed
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+
+        // Auto slide every 4 seconds
+        let slideInterval = setInterval(nextSlide, 4000);
+    </script>
 </body>
 </html>
