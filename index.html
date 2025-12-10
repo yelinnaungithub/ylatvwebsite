@@ -32,7 +32,7 @@
                     colors: {
                         brand: {
                            dark: '#0f172a',
-                           primary: '#3b82f6',
+                           primary: '#ef4444',
                         }
                     },
                     fontFamily: {
@@ -78,17 +78,17 @@
         }
 
         .gradient-text {
-            background: linear-gradient(to right, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
+        background: linear-gradient(to right, #ef4444, #f97316); /* Red to Orange */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
 
         .slider-dot {
             transition: all 0.3s ease;
         }
         .slider-dot.active {
-            background-color: #3b82f6;
+            background-color: #ef4444;;
             width: 32px;
         }
 
@@ -126,13 +126,13 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
                     <img class="h-10 w-10 rounded-xl shadow-lg transition-transform group-hover:scale-110" src="assets/logo.png" alt="YLA TV Logo" onerror="this.src='https://via.placeholder.com/50/3b82f6/ffffff?text=YLA'">
-                    <span class="font-bold text-2xl tracking-tight text-white">YLA <span class="text-blue-500">TV</span></span>
+                    <span class="font-bold text-2xl tracking-tight text-white">YLA <span class="text-red-500">TV</span></span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-1">
-                        <a href="#android" class="hover:text-blue-400 hover:bg-blue-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">Android</a>
-                        <a href="#ios" class="hover:text-blue-400 hover:bg-blue-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">iOS</a>
-                        <a href="#tv" class="hover:text-blue-400 hover:bg-blue-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">TV Box</a>
+                        <a href="#android" class="hover:text-red-400 hover:bg-red-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">Android</a>
+                        <a href="#ios" class="hover:text-red-400 hover:bg-red-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">iOS</a>
+                        <a href="#tv" class="hover:text-red-400 hover:bg-red-500/10 px-4 py-2 rounded-lg text-sm font-medium transition-all">TV Box</a>
                     </div>
                 </div>
                 <div class="md:hidden p-2 rounded-lg glass-card text-gray-300">
@@ -143,14 +143,14 @@
     </nav>
 
     <div class="relative pt-36 pb-24 lg:pt-44 overflow-hidden">
-        <div class="absolute top-20 left-1/3 w-96 h-96 bg-blue-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div class="absolute top-20 left-1/3 w-96 h-96 bg-red-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
         <div class="absolute top-40 right-1/4 w-96 h-96 bg-purple-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-sm text-blue-400 mb-6" data-aos="fade-down">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-sm text-red-400 mb-6" data-aos="fade-down">
                 <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                   </span>
                 Premium V 1.0 Available Now
              </div>
@@ -186,17 +186,17 @@
                     </p>
 
                     <div class="space-y-5">
-                        <a href="#" class="glass-card hover:border-blue-500/50 hover:bg-blue-600/10 group p-5 rounded-2xl flex items-center justify-between transition-all duration-300">
+                        <a href="#" class="glass-card hover:border-red-500/50 hover:bg-red-600/10 group p-5 rounded-2xl flex items-center justify-between transition-all duration-300">
                             <div class="flex items-center gap-5">
-                                <div class="bg-gradient-to-br from-blue-500 to-blue-700 p-4 rounded-xl shadow-lg shadow-blue-500/30">
+                                <div class="bg-gradient-to-br from-red-500 to-red-700 p-4 rounded-xl shadow-lg shadow-red-500/30">
                                     <i class="fas fa-bolt text-xl text-white"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition">Main Server</h3>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-red-400 transition">Main Server</h3>
                                     <span class="text-sm text-gray-400">Fastest Download • V 1.0.2</span>
                                 </div>
                             </div>
-                            <span class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800/50 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                            <span class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800/50 group-hover:bg-red-500 group-hover:text-white transition-all">
                                 <i class="fas fa-arrow-down"></i>
                             </span>
                         </a>
@@ -256,7 +256,7 @@
     </section>
 
     <section id="ios" class="py-24 relative overflow-hidden bg-gray-900/50">
-        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full filter blur-[120px] -z-10"></div>
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-red-600/10 rounded-full filter blur-[120px] -z-10"></div>
         <div class="absolute inset-0 z-20 flex flex-col items-center justify-center backdrop-blur-md bg-black/60">
             <div class="glass-card p-10 rounded-3xl text-center max-w-md mx-4 border-gray-700/50" data-aos="zoom-in">
                  <div class="mb-6 relative inline-block">
@@ -288,7 +288,7 @@
                         <img src="assets/ios-step1.jpg" alt="Step 1" class="w-full h-full object-cover rounded-xl shadow-lg" onerror="this.src='https://via.placeholder.com/400x600/222/fff?text=Step+1+Preview'">
                     </div>
                     <div class="flex items-start gap-4">
-                        <span class="flex-shrink-0 bg-blue-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-blue-500/30">1</span>
+                        <span class="flex-shrink-0 bg-red-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-red-500/30">1</span>
                         <div>
                             <h4 class="font-bold text-xl mb-2">Download Profile</h4>
                             <p class="text-gray-400">Safari browser မှတဆင့် Configuration Profile ကို ဒေါင်းလုတ်လုပ်ပါ။</p>
@@ -300,7 +300,7 @@
                         <img src="assets/ios-step2.jpg" alt="Step 2" class="w-full h-full object-cover rounded-xl shadow-lg" onerror="this.src='https://via.placeholder.com/400x600/222/fff?text=Step+2+Preview'">
                     </div>
                     <div class="flex items-start gap-4">
-                        <span class="flex-shrink-0 bg-blue-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-blue-500/30">2</span>
+                        <span class="flex-shrink-0 bg-red-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-red-500/30">2</span>
                         <div>
                              <h4 class="font-bold text-xl mb-2">Trust Certificate</h4>
                             <p class="text-gray-400">Settings > General > VPN & Device Management တွင် Trust လုပ်ပေးပါ။</p>
@@ -312,7 +312,7 @@
                         <img src="assets/ios-step3.jpg" alt="Step 3" class="w-full h-full object-cover rounded-xl shadow-lg" onerror="this.src='https://via.placeholder.com/400x600/222/fff?text=Step+3+Preview'">
                     </div>
                     <div class="flex items-start gap-4">
-                        <span class="flex-shrink-0 bg-blue-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-blue-500/30">3</span>
+                        <span class="flex-shrink-0 bg-red-600 w-10 h-10 flex items-center justify-center rounded-full font-bold text-lg shadow-lg shadow-red-500/30">3</span>
                         <div>
                              <h4 class="font-bold text-xl mb-2">Install & Enjoy</h4>
                             <p class="text-gray-400">Home Screen တွင် ပေါ်လာသော App ကိုဖွင့်ပြီး ကြည့်ရှုနိုင်ပါပြီ။</p>
@@ -343,10 +343,10 @@
 
             <div class="max-w-4xl mx-auto space-y-12">
                 
-                <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-blue-500" data-aos="fade-up">
+                <div class="glass-card p-6 md:p-8 rounded-2xl border-l-4 border-red-500" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row gap-8 items-start">
                         <div class="flex-1">
-                            <span class="text-blue-500 font-bold text-lg mb-2 block">အဆင့် (၁)</span>
+                            <span class="text-red-500 font-bold text-lg mb-2 block">အဆင့် (၁)</span>
                             <h3 class="text-2xl font-bold text-white mb-4">Downloader App ကို Install ပြုလုပ်ပါ</h3>
                             <p class="text-gray-300 leading-relaxed mb-4">
                                 Google Play Store သို့ဝင်ရောက်ပြီး Downloader ဟုရိုက်ရှာပါ။ လိမ္မော်ရောင် Icon လေးနှင့် App ကို Install ပြုလုပ်ပေးပါ။
@@ -392,7 +392,7 @@
     </section>
 
     <footer class="relative bg-[#0a0f1d] pt-20 pb-10 overflow-hidden">
-        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] bg-blue-900/20 rounded-full filter blur-[100px] -z-10"></div>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] bg-red-900/20 rounded-full filter blur-[100px] -z-10"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -405,8 +405,8 @@
                         The best premium streaming platform for live sports, movies, and TV channels across all your devices.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all shadow-lg"><i class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-blue-500 hover:text-white transition-all shadow-lg"><i class="fab fa-telegram-plane text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all shadow-lg"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-red-500 hover:text-white transition-all shadow-lg"><i class="fab fa-telegram-plane text-xl"></i></a>
                         <a href="#" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-red-500 hover:text-white transition-all shadow-lg"><i class="fas fa-envelope text-xl"></i></a>
                     </div>
                 </div>
@@ -414,18 +414,18 @@
                 <div>
                     <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
                     <ul class="space-y-4">
-                        <li><a href="#android" class="text-gray-400 hover:text-blue-400 transition">Android App</a></li>
-                        <li><a href="#ios" class="text-gray-400 hover:text-blue-400 transition">iOS App</a></li>
-                        <li><a href="#tv" class="text-gray-400 hover:text-blue-400 transition">TV Box Version</a></li>
+                        <li><a href="#android" class="text-gray-400 hover:text-red-400 transition">Android App</a></li>
+                        <li><a href="#ios" class="text-gray-400 hover:text-red-400 transition">iOS App</a></li>
+                        <li><a href="#tv" class="text-gray-400 hover:text-red-400 transition">TV Box Version</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold text-lg mb-6">Support</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
